@@ -10,7 +10,7 @@ OBJS_OUTPUT=$(addprefix $(BUILD_DIR)/, $(OBJS))
 $(TARGET): $(BUILD_DIR)/$(TARGET)
 
 $(BUILD_DIR)/$(TARGET): $(OBJS_OUTPUT)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(BUILD_DIR)/%.o: src/%.c $(BUILD_DIR)
 	$(CC) -c $(CFLAGS) -o $@ $<
